@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    restart: always
+    environment:
+      - ENV=production
+      - TZ=Asia/Jakarta
+    ports:
+      - "3003:8000"
+    volumes:
+      - ./docker/app/log:/app/log
+      - ./config:/app/config
